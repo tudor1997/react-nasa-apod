@@ -1,13 +1,162 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    
+}
+.container{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    background-color:rgb(206, 206, 206);
+    justify-content: space-evenly;
+}
+.card {
+    width:80%;
+    height:90vh;
+    margin:70px auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    
+}
+.card h2{
+    margin-bottom:20px;
+    font-size:27px;
+    font-family: 'Shippori Antique B1', sans-serif;
+    text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card-container{
+    width:100%;
+    height: 80%;
+    position:relative;
+    border-radius:10px;
+    box-shadow:1px 1px 14px 0px #000;
+}
+.card-container img{
+    width:100%;
+    height: 100%;
+    object-fit:fill;
+    border-radius:inherit;
+    border-radius:10px;
+}
+.date{
+    margin-bottom:10px;
+    color:rgb(7, 114, 141);
+}
+.container-list{
+    width:100%;
+    height:100%;
+}
+.author{
+    font-size:19px;
+    color:rgb(24, 100, 119);
+    font-family: 'Shippori Antique B1', sans-serif;
+    margin-bottom:5px;
+}
+.info{
+    position:absolute;
+    top:0%;
+    left:0%;
+    width:100%;
+    height:100%;
+    background-color:rgba(0, 0, 0, 0.726);
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:20px;
+    font-size:19px;
+    border-radius:inherit;
+    opacity:0;
+    transition:opacity .4s ease-in-out;
+}
+.favorites-btn{
+    padding:5px 10px;
+    font-size:17px;
+    margin-top:20px;
+    font-weight: 500;
+    background-color:rgb(7, 114, 141);
+    border:1px solid #000;
+    border-radius:5px;
+    color:white;
+    cursor:pointer;
+    font-family: 'Shippori Antique B1', sans-serif;
+    transition: all .4s ease-in-out;
+}
+.favorites-btn:hover{
+    background-color:#fff;
+    color:#000;
+}
+.card-container:hover .info{
+    opacity:1;
+}
+
+@media screen and (max-width:500px){
+    .card {
+        height: 110vh;
+    }
+    .card h2{
+        font-size:21px;
+      
+    }
+    .info p {
+        font-size:15px;
+    }
+}
+
+
+
+.loading-section{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background-color:rgb(206, 206, 206);
+}
+
+.navbar{
+    width:100%;
+    height:7rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+    position:sticky;
+    top:0;
+    left:0;
+    z-index:10;
+    background-color:antiquewhite;
+}
+.navbar h3{
+    font-size:40px;
+}
+.nav-elem{
+    font-size:20px;
+    font-family: 'Shippori Antique B1', sans-serif;
+    margin:auto 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.confirm{
+    position:fixed;
+    bottom: 2%;
+    right: 1%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width: 160px;
+    height:45px;
+    border-radius:10px;
+    font-size:19px;
+    font-family: 'Shippori Antique B1', sans-serif;
+    font-weight: 700;
+    
+    background-color:#fff;
 }
