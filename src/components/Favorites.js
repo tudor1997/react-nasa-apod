@@ -5,12 +5,12 @@ import Card from './Card';
 
 const Favorites = () => {
 
-    const {favorites} = useContext(ApiContext);
+    const {favorites, getNasaData, api} = useContext(ApiContext);
     if(favorites.length < 1) {
         return (
                 <div className="container-empty">
                     <h1>You don't have any favorite article.</h1>
-                            <Link className="add-items" to="/">Add new favorites</Link>
+                            <Link  onClick={() => getNasaData(api)} className="add-items" to="/">Add new favorites</Link>
                 </div>
         )
     }
