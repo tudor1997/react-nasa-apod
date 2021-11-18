@@ -1,18 +1,35 @@
-import React, {useContext} from 'react';
-import { ApiContext } from './context/ApiContext';
-import CardsList from './components/CardsList'
-import Loading from './components/Loading';
+import React from 'react';
 import Navbar from './components/Navbar';
-import Confirm from  './components/Confirm';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './components/Home';
+import Favorites from './components/Favorites';
+
+
 function App() {
 
-  const {loading,confirm} = useContext(ApiContext);
+
   return (
-    <section className="container">
-        <Navbar/>
-      {loading ? <CardsList/> : <Loading/>}
-      {confirm && <Confirm/>}
-    </section>
+    <Router>
+          <Navbar/>
+          <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/favorites">
+            <Favorites />
+          </Route>
+       
+        </Switch>
+
+          
+    </Router>
+
+ 
   );
 }
 
