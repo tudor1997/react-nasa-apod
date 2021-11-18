@@ -53,9 +53,7 @@
     width:100%;
     height:100%;
 }
-.fix-height{
-    height:100vh;
-}
+
 .author{
     font-size:19px;
     color:rgb(24, 100, 119);
@@ -100,14 +98,18 @@
 }
 
 @media screen and (max-width:500px){
+    
     .navbar h3{
         display:none;
     }
     .nav-elem{
         font-size:14px;
     }
+    .card-container{
+        height:100%;
+    }
     .card {
-        height: 110vh;
+        height: 120vh;
     }
     .card h2{
         font-size:21px;
@@ -115,6 +117,10 @@
     }
     .info p {
         font-size:14px;
+    }
+    .author{
+        font-size:15px;
+        text-align: center;
     }
 }
 
