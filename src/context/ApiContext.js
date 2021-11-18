@@ -9,6 +9,8 @@ function getFavoritesItemsFromLocalStorage() {
 
 const ApiProvider = ({children}) => {
 
+
+
     const [nasa, setNasa] = useState([]);
     const [favorites, setFavorites] = useState(getFavoritesItemsFromLocalStorage());
     const [loading,setLoading] = useState(false);
@@ -29,6 +31,7 @@ const ApiProvider = ({children}) => {
         localStorage.setItem('nasaFavorites', JSON.stringify(favorites));
     }
     const saveFavorites = (itemUrl) => {
+   
         nasa.forEach((item) => {
             if(item.url.includes(itemUrl) && !favorites[itemUrl]){
                     const {date, explanation, url, title, copyright} = item
@@ -52,10 +55,11 @@ const ApiProvider = ({children}) => {
     }
     const removeItem = (url) => {
         setFavorites([...favorites].filter(item => item.url !== url));
+        setNasa(favorites);
     }
     return (
         <ApiContext.Provider value={{nasa,loading,getNasaData,api,favorites,saveFavorites,removeItem,updateDomWithFavorites,
-        setConfirm,confirm}}>
+        setConfirm,confirm,setNasa}}>
             {children}
         </ApiContext.Provider>
     )
